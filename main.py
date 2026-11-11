@@ -1,4 +1,4 @@
-
+# Application de gestion des taches - Version 2 (avec recherche)
 taches = []
 
 
@@ -24,6 +24,13 @@ def afficher_taches():
             print(f"{i + 1}. {taches[i]}")
 
 
+def rechercher_tache():
+    mot = input("Mot-cle : ").strip().lower()
+    for i in range(len(taches)):
+        if mot in taches[i].lower():
+            print(f"{i + 1}. {taches[i]}")
+
+
 def main():
     choix = ""
     while choix != "0":
@@ -34,12 +41,11 @@ def main():
         elif choix == "2":
             afficher_taches()
         elif choix == "3":
-            print("Fonction pas encore disponible.")
+            rechercher_tache()
         elif choix == "0":
             print("Au revoir !")
         else:
             print("Erreur : option invalide.")
-
 
 
 main()
