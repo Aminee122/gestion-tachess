@@ -1,4 +1,4 @@
-# Application de gestion des taches - Version 2 (avec recherche)
+# Application de gestion des taches - Version 3
 taches = []
 
 
@@ -26,9 +26,13 @@ def afficher_taches():
 
 def rechercher_tache():
     mot = input("Mot-cle : ").strip().lower()
+    trouve = False
     for i in range(len(taches)):
         if mot in taches[i].lower():
             print(f"{i + 1}. {taches[i]}")
+            trouve = True
+    if not trouve:
+        print("Aucune tache ne correspond a ce mot-cle.")
 
 
 def main():
